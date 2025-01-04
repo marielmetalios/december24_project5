@@ -80,7 +80,7 @@ function writeToFile(fileName, data) {
 inquirer.prompt(questions)
 .then ((data) => {
     const fileName = `READMEFile.json`;
-fs.writeFile(fileName, JSON.stringify(data, null, '/t'), (err) => 
+fs.writeFile(fileName, JSON.stringify(data, null, '\t'), (err) => 
 err ? console.log(err) : console.log("README created!")
 );
 })};
