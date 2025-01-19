@@ -1,26 +1,37 @@
 
-    Movie & Snack Recommender
+  # ONEONEONE
 
-    ## Purpose
-    To generate responses
+  ## Description
+  * s
 
-    ## Installation
-    Follow 1, 2, 3, and 4
+  ## Installation
+  * d
 
-    ## Usage
-    Open URL to run
+  ## Usage
+  * d
 
-    ## Table of Contents
-    Intro, Body, Conclusion
+  ## Table of Contents
+  * undefined
+  - [Description](#Description)
+  - [Installation](#Installation)
+  - [Usage](#Usage)
+  - [Contributing](#Contributing)
+  - [Questions](#Questions)
+  - [License](#Licensing)
 
-    ## Contributing
-    Jessica. Others can download
+  ## Contributing
+  * d
 
-    ## Licensing
-    MIT
+  ## Questions
+  * If you have questions, please reach out to [d](mailto:d)
+  * You can also find me on GitHub: [d](https://github.com/d).
 
-    ## GitHub Username
-    marielmetalios@gmail.com
+  ## Licensing
+  * This project is licensed under the d license: 
+  ![GitHub license](https://img.shields.io/badge/license-d-blue.svg)
+  
+* [License](#license)
 
-    ## Email
-    marielmetalios@gmail.com
+
+
+  

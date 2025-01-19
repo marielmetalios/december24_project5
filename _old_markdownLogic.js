@@ -1,5 +1,9 @@
 function jsonToMD(data) {
     return `
+    ## Title
+    ${data.Title}
+
+    ## Description
     ${data.Description}
 
     ## Purpose
@@ -17,8 +21,8 @@ function jsonToMD(data) {
     ## Contributing
     ${data.Contributing}
 
-    ## Licensing
-    ${data.Licensing}
+    ## License
+    ${data.License}
 
     ## GitHub Username
     ${data.GitHub_Username}

@@ -1,38 +1,40 @@
 // TODO: Include packages needed for this application
 import inquirer from 'inquirer';
+// import checkbox from 'inquirer';
 import fs from 'fs';
-import jsonToMD from './generatemd.js';
+import generateMarkdown from './utils/generateMarkdown.js';
 import path from 'path';
 
 // TODO: Create an array of questions for user input
 const questions = [
-    {
+  {     type: "input",
+        message: "What is the title of your project?",  
+        name: "Title"
+    },{
         type: "input",
         message: "What is the description of your project?",
         name: "Description"
-    },
-    {
-        type: "input",
-        message: "What was the purpose of your project?",
-        name: "Purpose"
-    },
-    {
-        type: "input",
-        message: "What problem does it solve?",
-        name: "Problem-solving"
     },
     {
         type: "confirm",
         message: "Do you want to add table of contents?",
         name: "addTableOfContents"
     },{
+        type: "checkbox",
+        message: "Please select your Table of Contents Sections",
+        name: "Table of Contents",
+        when: (answers) => answers.addTableOfContents,
+        choices: [
+            {name: 'Description', value: 'Description'},
+            {name: 'Installation', value: 'Installation'},
+            {name: 'Usage', value: 'Usage'},
+            {name: 'Contributing', value: 'Contributing'},
+            {name: 'Tests', value: 'Tests'},
+            {name: 'License', value: 'License'},
+            {name: 'Questions', value: 'Questions'},
+    ]},{
         type: "input",
-        message: "Write your Table of Contents sections here:",
-        name: "tableOfContents",
-        when: (answers) => answers.addTableOfContents
-    },{
-        type: "input",
-        message: "What are the steps required to install your project?",
+        message: "How is your project installed?",
         name: "Installation"
     },{
         type: "input",
@@ -44,27 +46,22 @@ const questions = [
         name: "Contributing"
     },{
         type: "input",
-        message: "Did you use any third party assets that need to be acknowledged? If so, write them here:",
-        name: "Learnings"
-    },{
-        type: "input",
-        message: "Did you use any tutorials? If so, credit them here:",
-        name: "Tutorials"
-    },{
-        type: "input",
         message: "What licensing do you want to add?",
-        name: "Licensing"
+        name: "License"
+    },{
+        type: "input",
+        message: "How can others test the application?",
+        name: "Tests"
     },{
         type: "input",
         message: "What is your GitHub username?",
-        name: "GitHub_Username"
+        name: "GitHubUsername"
     },{
         type: "input",
         message: "What is your email?",
         name: "Email"
     }
 ];
-
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
@@ -73,18 +70,13 @@ function writeToFile(fileName, data) {
     // err ? console.log(err) : console.log("README created!"));
 };
 
-
 // TODO: Create a function to initialize app
-
-// converting the json file to a md file --
 function init() {
     inquirer.prompt(questions)
     .then((data) => {
-    // const mdFileName = `READMEFile.md`;
-    // const mdContent = jsonToMD(data);
-    // writeToFile(mdFileName, mdContent);
+
 console.log(data);
-writeToFile('README.md', jsonToMD({...data}))
+writeToFile('README.md', generateMarkdown({...data}))
 });
 }
 // Function call to initialize app
