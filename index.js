@@ -7,7 +7,7 @@ import path from 'path';
 
 // TODO: Create an array of questions for user input
 const questions = [
-  {     type: "input",
+    {   type: "input",
         message: "What is the title of your project?",  
         name: "Title"
     },{
@@ -21,8 +21,8 @@ const questions = [
         name: "addTableOfContents"
     },{
         type: "checkbox",
-        message: "Please select your Table of Contents Sections",
-        name: "Table of Contents",
+        message: "Please select the Table of Contents sections you'd like to add",
+        name: "tableofContents",
         when: (answers) => answers.addTableOfContents,
         choices: [
             {name: 'Description', value: 'Description'},
@@ -62,6 +62,9 @@ const questions = [
         name: "Email"
     }
 ];
+
+// logic for Table of Contents
+// const toc = tableOfContents.map(`- [${item}](#${item.toLowerCase()})`).join('\n');
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
