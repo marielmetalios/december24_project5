@@ -9,7 +9,7 @@
 - [Tests](#tests)
 - [License](#license)
 - [Questions](#questions)
-
+  
   ## Description
   * Generates READMEs efficiently using the Inquirer npm package.
 
@@ -32,7 +32,6 @@
   ## Licensing
   * This project is licensed under the MIT license:
   ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
-  
-* [License](#license)
+  * [License](#license)
 
   
